@@ -1,0 +1,7 @@
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\Connected\bin\Debug\Connected.exe.config
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\Connected\bin\Debug\Connected.exe
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\Connected\bin\Debug\Connected.pdb
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\Connected\obj\Debug\Connected.csprojAssemblyReference.cache
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\Connected\obj\Debug\Connected.csproj.CoreCompileInputs.cache
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\Connected\obj\Debug\Connected.exe
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\Connected\obj\Debug\Connected.pdb

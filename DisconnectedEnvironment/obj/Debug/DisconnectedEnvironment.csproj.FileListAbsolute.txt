@@ -1,0 +1,10 @@
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\DisconnectedEnvironment\bin\Debug\DisconnectedEnvironment.exe.config
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\DisconnectedEnvironment\bin\Debug\DisconnectedEnvironment.exe
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\DisconnectedEnvironment\bin\Debug\DisconnectedEnvironment.pdb
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\DisconnectedEnvironment\obj\Debug\DisconnectedEnvironment.csprojAssemblyReference.cache
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\DisconnectedEnvironment\obj\Debug\DisconnectedEnvironment.Form1.resources
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\DisconnectedEnvironment\obj\Debug\DisconnectedEnvironment.Properties.Resources.resources
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\DisconnectedEnvironment\obj\Debug\DisconnectedEnvironment.csproj.GenerateResource.cache
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\DisconnectedEnvironment\obj\Debug\DisconnectedEnvironment.csproj.CoreCompileInputs.cache
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\DisconnectedEnvironment\obj\Debug\DisconnectedEnvironment.exe
+E:\DATA SOURCE CODE\PABD\Activity Manipulating Data in a Connected Environment\DisconnectedEnvironment\obj\Debug\DisconnectedEnvironment.pdb

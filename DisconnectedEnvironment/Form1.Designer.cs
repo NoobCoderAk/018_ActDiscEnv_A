@@ -44,31 +44,35 @@ namespace DisconnectedEnvironment
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbDepartement = new System.Windows.Forms.ComboBox();
-            this.cbDesignation = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCountry = new System.Windows.Forms.TextBox();
-            this.txtState = new System.Windows.Forms.TextBox();
+            this.txtTes = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtNIK = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.cmdAdd = new System.Windows.Forms.Button();
             this.cmdSave = new System.Windows.Forms.Button();
             this.cmdDelete = new System.Windows.Forms.Button();
+            this.prodiTIDataSet = new DisconnectedEnvironment.ProdiTIDataSet();
+            this.pembimbingAkademikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pembimbing_AkademikTableAdapter = new DisconnectedEnvironment.ProdiTIDataSetTableAdapters.Pembimbing_AkademikTableAdapter();
+            this.pembimbingAkademikBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cbKeahlian = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prodiTIDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pembimbingAkademikBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pembimbingAkademikBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.BindingSource = this.pembimbingAkademikBindingSource1;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -186,144 +190,102 @@ namespace DisconnectedEnvironment
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.68224F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.31776F));
-            this.tableLayoutPanel1.Controls.Add(this.cbDepartement, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.cbDesignation, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.cbKeahlian, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtCountry, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtState, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtTes, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtStatus, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtAddress, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtCode, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txtNIK, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtName, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(28, 92);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(36, 130);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(396, 237);
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(396, 168);
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // cbDepartement
-            // 
-            this.cbDepartement.FormattingEnabled = true;
-            this.cbDepartement.Location = new System.Drawing.Point(148, 203);
-            this.cbDepartement.Name = "cbDepartement";
-            this.cbDepartement.Size = new System.Drawing.Size(145, 24);
-            this.cbDepartement.TabIndex = 14;
-            // 
-            // cbDesignation
-            // 
-            this.cbDesignation.FormattingEnabled = true;
-            this.cbDesignation.Location = new System.Drawing.Point(148, 169);
-            this.cbDesignation.Name = "cbDesignation";
-            this.cbDesignation.Size = new System.Drawing.Size(145, 24);
-            this.cbDesignation.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 17);
+            this.label1.Size = new System.Drawing.Size(30, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Employe Code";
+            this.label1.Text = "NIK";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // txtCountry
+            // txtTes
             // 
-            this.txtCountry.Location = new System.Drawing.Point(148, 137);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(145, 22);
-            this.txtCountry.TabIndex = 12;
+            this.txtTes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pembimbingAkademikBindingSource1, "Tes", true));
+            this.txtTes.Location = new System.Drawing.Point(148, 133);
+            this.txtTes.Name = "txtTes";
+            this.txtTes.Size = new System.Drawing.Size(230, 22);
+            this.txtTes.TabIndex = 12;
             // 
-            // txtState
+            // txtStatus
             // 
-            this.txtState.Location = new System.Drawing.Point(148, 105);
-            this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(145, 22);
-            this.txtState.TabIndex = 11;
+            this.txtStatus.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pembimbingAkademikBindingSource1, "Status", true));
+            this.txtStatus.Location = new System.Drawing.Point(148, 101);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(230, 22);
+            this.txtStatus.TabIndex = 11;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 102);
+            this.label4.Location = new System.Drawing.Point(3, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 17);
+            this.label4.Size = new System.Drawing.Size(48, 17);
             this.label4.TabIndex = 4;
-            this.label4.Text = "State";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(148, 72);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(230, 22);
-            this.txtAddress.TabIndex = 10;
+            this.label4.Text = "Status";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 134);
+            this.label5.Location = new System.Drawing.Point(3, 130);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 17);
+            this.label5.Size = new System.Drawing.Size(32, 17);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Country";
+            this.label5.Text = "Tes";
             // 
-            // label6
+            // txtNIK
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 166);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 17);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Designation";
-            // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(148, 3);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(145, 22);
-            this.txtCode.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 200);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 17);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Departement";
+            this.txtNIK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pembimbingAkademikBindingSource1, "NIK", true));
+            this.txtNIK.Location = new System.Drawing.Point(148, 3);
+            this.txtNIK.Name = "txtNIK";
+            this.txtNIK.Size = new System.Drawing.Size(230, 22);
+            this.txtNIK.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 35);
+            this.label2.Location = new System.Drawing.Point(3, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.Size = new System.Drawing.Size(130, 17);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Employee Name";
+            this.label2.Text = "Nama_Pembimbing";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 69);
+            this.label3.Location = new System.Drawing.Point(3, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
+            this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Address";
+            this.label3.Text = "Keahlian";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(148, 38);
+            this.txtName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pembimbingAkademikBindingSource1, "Nama_Pembimbing", true));
+            this.txtName.Location = new System.Drawing.Point(148, 37);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(230, 22);
             this.txtName.TabIndex = 9;
@@ -338,6 +300,7 @@ namespace DisconnectedEnvironment
             this.cmdAdd.TabIndex = 2;
             this.cmdAdd.Text = "Add";
             this.cmdAdd.UseVisualStyleBackColor = false;
+            this.cmdAdd.Click += new System.EventHandler(this.cmdAdd_Click);
             // 
             // cmdSave
             // 
@@ -349,6 +312,7 @@ namespace DisconnectedEnvironment
             this.cmdSave.TabIndex = 3;
             this.cmdSave.Text = "Save";
             this.cmdSave.UseVisualStyleBackColor = false;
+            this.cmdSave.Click += new System.EventHandler(this.cmdSave_Click);
             // 
             // cmdDelete
             // 
@@ -360,11 +324,41 @@ namespace DisconnectedEnvironment
             this.cmdDelete.TabIndex = 4;
             this.cmdDelete.Text = "Delete";
             this.cmdDelete.UseVisualStyleBackColor = false;
+            this.cmdDelete.Click += new System.EventHandler(this.cmdDelete_Click);
+            // 
+            // prodiTIDataSet
+            // 
+            this.prodiTIDataSet.DataSetName = "ProdiTIDataSet";
+            this.prodiTIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pembimbingAkademikBindingSource
+            // 
+            this.pembimbingAkademikBindingSource.DataMember = "Pembimbing_Akademik";
+            this.pembimbingAkademikBindingSource.DataSource = this.prodiTIDataSet;
+            // 
+            // pembimbing_AkademikTableAdapter
+            // 
+            this.pembimbing_AkademikTableAdapter.ClearBeforeFill = true;
+            // 
+            // pembimbingAkademikBindingSource1
+            // 
+            this.pembimbingAkademikBindingSource1.DataMember = "Pembimbing_Akademik";
+            this.pembimbingAkademikBindingSource1.DataSource = this.prodiTIDataSet;
+            // 
+            // cbKeahlian
+            // 
+            this.cbKeahlian.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pembimbingAkademikBindingSource1, "Keahlian", true));
+            this.cbKeahlian.FormattingEnabled = true;
+            this.cbKeahlian.Location = new System.Drawing.Point(148, 70);
+            this.cbKeahlian.Name = "cbKeahlian";
+            this.cbKeahlian.Size = new System.Drawing.Size(230, 24);
+            this.cbKeahlian.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(682, 450);
             this.Controls.Add(this.cmdDelete);
             this.Controls.Add(this.cmdSave);
@@ -374,11 +368,15 @@ namespace DisconnectedEnvironment
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Employee Details";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prodiTIDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pembimbingAkademikBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pembimbingAkademikBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,23 +397,23 @@ namespace DisconnectedEnvironment
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ComboBox cbDepartement;
-        private System.Windows.Forms.ComboBox cbDesignation;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCountry;
-        private System.Windows.Forms.TextBox txtState;
+        private System.Windows.Forms.TextBox txtTes;
+        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtCode;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtNIK;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button cmdAdd;
         private System.Windows.Forms.Button cmdSave;
         private System.Windows.Forms.Button cmdDelete;
+        private ProdiTIDataSet prodiTIDataSet;
+        private System.Windows.Forms.BindingSource pembimbingAkademikBindingSource;
+        private ProdiTIDataSetTableAdapters.Pembimbing_AkademikTableAdapter pembimbing_AkademikTableAdapter;
+        private System.Windows.Forms.BindingSource pembimbingAkademikBindingSource1;
+        private System.Windows.Forms.ComboBox cbKeahlian;
     }
 }
 

@@ -18,21 +18,6 @@ namespace DisconnectedEnvironment
         public Form1()
         {
             InitializeComponent();
-
-            //--------
-            this.pembimbing_AkademikTableAdapter.Fill(this.prodiTIDataSet.Pembimbing_Akademik);
-            //---------
-            this.pembimbing_AkademikTableAdapter.Fill(this.prodiTIDataSet.Pembimbing_Akademik);
-            txtNIK.Enabled = false;
-            txtName.Enabled = false;
-            cbKeahlian.Enabled = false;
-            txtStatus.Enabled = false;
-            txtTes.Enabled = false;
-            cbKeahlian.Items.Add("Programming");
-            cbKeahlian.Items.Add("Database");
-            cbKeahlian.Items.Add("Networking");
-            cbKeahlian.Items.Add("UI/UX");
-            cmdSave.Enabled = false;
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -47,46 +32,67 @@ namespace DisconnectedEnvironment
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'prodiTIDataSet.Pembimbing_Akademik' table. You can move, or remove it, as needed.
-            this.pembimbing_AkademikTableAdapter.Fill(this.prodiTIDataSet.Pembimbing_Akademik);
+            // TODO: This line of code loads data into the 'hRDataSet.empdetails' table. You can move, or remove it, as needed.
+            this.empdetailsTableAdapter.Fill(this.hRDataSet.empdetails);
+            // TODO: This line of code loads data into the 'hRDataSet.empdetails' table. You can move, or remove it, as needed.
+            this.empdetailsTableAdapter.Fill(this.hRDataSet.empdetails);
 
+            txtCode.Enabled = false;
+            txtName.Enabled = false;
+            txtAddress.Enabled = false;
+            txtState.Enabled = false;
+            txtCountry.Enabled = false;
+            cbDesignation.Enabled = false;
+            cbDepartement.Enabled = false;
+
+            cbDesignation.Items.Add("MANAGER");
+            cbDesignation.Items.Add("AUTHOR");
+            cbDesignation.Items.Add("DESIGNER");
+            cbDepartement.Items.Add("MARKETING");
+            cbDepartement.Items.Add("FINANCE");
+            cbDepartement.Items.Add("IDO");
+            cmdSave.Enabled = false;
         }
 
         private void cmdAdd_Click(object sender, EventArgs e)
         {
             cmdSave.Enabled = true;
             txtName.Enabled = true;
-            cbKeahlian.Enabled = true;
-            txtStatus.Enabled = true;
-            txtTes.Enabled = true;
+            txtAddress.Enabled = true;
+            txtState.Enabled = true;
+            txtCountry.Enabled = true;
+            cbDesignation.Enabled = true;
+            cbDepartement.Enabled = true;
 
             txtName.Text = "";
-            cbKeahlian.Text = "";
-            txtStatus.Text = "";
-            txtTes.Text = "";
+            txtAddress.Text = "";
+            txtState.Text = "";
+            txtCountry.Text = "";
+            cbDesignation.Text = "";
+            cbDepartement.Text = "";
 
             int ctr, len;
             string codeval;
-            dt = prodiTIDataSet.Tables["Pembimbing_Akademik"];
+            dt = hRDataSet.Tables["empdetails"];
             len = dt.Rows.Count - 1;
             dr = dt.Rows[len];
-            code = dr["NIK"].ToString();
-            codeval = code.Substring(0, 2);
+            code = dr["ccode"].ToString();
+            codeval = code.Substring(1, 3);
             ctr = Convert.ToInt32(codeval);
             if ((ctr >= 1) && (ctr < 9))
             {
                 ctr = ctr + 1;
-                txtNIK.Text = "a" + ctr;
+                txtCode.Text = "C00" + ctr;
             }
             else if ((ctr >= 9) && (ctr < 99))
             {
                 ctr = ctr + 1;
-                txtNIK.Text = "b" + ctr;
+                txtCode.Text = "C0" + ctr;
             }
             else if (ctr >= 90)
             {
                 ctr = ctr + 1;
-                txtNIK.Text = "c" + ctr;
+                txtCode.Text = "C" + ctr;
             }
 
             cmdAdd.Enabled = false;
@@ -94,23 +100,27 @@ namespace DisconnectedEnvironment
 
         private void cmdSave_Click(object sender, EventArgs e)
         {
-            dt =prodiTIDataSet.Tables["Pembimbing_Akademik"];
+            dt =hRDataSet.Tables["empdetails"];
             dr = dt.NewRow();
-            dr[0] = txtNIK.Text;
+            dr[0] = txtCode.Text;
             dr[1] = txtName.Text;
-            dr[2] = cbKeahlian.SelectedItem;
-            dr[3] = txtStatus.Text;
-            dr[4] = txtTes.Text;
+            dr[2] = txtAddress.Text;
+            dr[3] = txtState.Text;
+            dr[4] = txtCountry.Text;
+            dr[5] = cbDesignation.SelectedItem;
+            dr[6] = cbDepartement.SelectedItem;
             dt.Rows.Add(dr);
-
-            txtNIK.Text= System.Convert.ToString(dr[0]);
-            txtNIK.Enabled = false;
+            empdetailsTableAdapter.Update(hRDataSet);
+            txtCode.Text= System.Convert.ToString(dr[0]);
+            txtCode.Enabled = false;
             txtName.Enabled = false;
-            cbKeahlian.Enabled = false;
-            txtStatus.Enabled = false;
-            txtTes.Enabled = false;
+            txtAddress.Enabled = false;
+            txtState.Enabled = false;
+            txtCountry.Enabled = false;
+            cbDesignation.Enabled = false;
+            cbDepartement.Enabled = false;
 
-            this.pembimbing_AkademikTableAdapter.Fill(this.prodiTIDataSet.Pembimbing_Akademik);
+            this.empdetailsTableAdapter.Fill(this.hRDataSet.empdetails);
             cmdAdd.Enabled = true;
             cmdSave.Enabled = false;
         }
@@ -118,10 +128,10 @@ namespace DisconnectedEnvironment
         private void cmdDelete_Click(object sender, EventArgs e)
         {
             string code;
-            code = txtNIK.Text;
-            dr = prodiTIDataSet.Tables["Pembimbing_Akademik"].Rows.Find(code);
+            code = txtCode.Text;
+            dr = hRDataSet.Tables["empdetails"].Rows.Find(code);
             dr.Delete();
-            pembimbing_AkademikTableAdapter.Update(prodiTIDataSet);
+            empdetailsTableAdapter.Update(hRDataSet);
         }
     }
 }
